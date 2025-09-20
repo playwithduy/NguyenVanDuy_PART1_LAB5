@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="mb-4">Chỉnh sửa Nhà cung cấp</h1>
+
+            <form action="/suppliers/<%= supplier._id %>?_method=PUT" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Tên nhà cung cấp</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<%= supplier.name %>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Địa chỉ</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" required><%= supplier.address %></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phone" name="phone" value="<%= supplier.phone %>" required>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex">
+                    <button type="submit" class="btn btn-primary me-md-2">Cập nhật</button>
+                    <a href="/suppliers" class="btn btn-secondary">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
